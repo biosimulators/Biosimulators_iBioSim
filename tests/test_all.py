@@ -20,7 +20,7 @@ import unittest
 
 class CliTestCase(unittest.TestCase):
     EXAMPLE_ARCHIVE_FILENAME = 'tests/fixtures/BIOMD0000000297.omex'
-    DOCKER_IMAGE = 'docker.io/paytonco/ibiosim:latest'
+    DOCKER_IMAGE = 'ghcr.io/MyersResearchGroup/ibiosim:latest'
 
     def setUp(self):
         self.dirname = tempfile.mkdtemp()

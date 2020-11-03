@@ -49,7 +49,7 @@ setuptools.setup(
     ],
     entry_points={
         'console_scripts': [
-            'iBioSim = Biosimulators_iBioSim.__main__:main',
+            'iBioSim = biosimulators_ibiosim.__main__:main',
         ],
     },
 )

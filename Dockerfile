@@ -2,7 +2,7 @@
 FROM ubuntu:18.04
 
 LABEL base_image="ubuntu:18.04"
-LABEL version="1.0.0"
+LABEL version="0.0.1"
 LABEL software="iBioSim"
 LABEL software.version="3.1.0"
 LABEL about.summary="CAD tool aimed for the modeling, analysis, and design of genetic circuits"

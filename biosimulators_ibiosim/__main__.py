@@ -7,7 +7,7 @@
 """
 
 from .core import exec_combine_archive
-import Biosimulators_iBioSim
+import biosimulators_ibiosim
 import cement
 
 
@@ -27,7 +27,7 @@ class BaseController(cement.Controller):
                                        default='.',
                                        help='Directory to save outputs')),
             (['-v', '--version'], dict(action='version',
-                                       version=Biosimulators_iBioSim.__version__)),
+                                       version=biosimulators_ibiosim.__version__)),
         ]
 
     @cement.ex(hide=True)
