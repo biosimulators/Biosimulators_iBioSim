@@ -1,10 +1,14 @@
 # Base OS
 FROM ubuntu:18.04
 
+# Version
+ENV VERSION=3.1.0
+
+# BioContainers metadata
 LABEL base_image="ubuntu:18.04"
 LABEL version="0.0.1"
 LABEL software="iBioSim"
-LABEL software.version="3.1.0"
+LABEL software.version="${VERSION}"
 LABEL about.summary="CAD tool aimed for the modeling, analysis, and design of genetic circuits"
 LABEL about.home="https://github.com/MyersResearchGroup/iBioSim"
 LABEL about.documentation="https://github.com/MyersResearchGroup/iBioSim"
@@ -14,26 +18,29 @@ LABEL about.tags="kinetic modeling,dynamical simulation,systems biology,biochemi
 LABEL maintainer="Chris Myers <chris.myers@colorado.edu>"
 
 # Install requirements
-RUN apt-get update --fix-missing \
-	&& apt-get install python3.7 -y \
-	&& apt-get install python3-pip -y \
-	&& pip3 install -U setuptools \
-	&& pip3 install python-libsbml
+RUN apt-get update -y \
+    && apt-get install -y --no-install-recommends \
+        git \
+        openjdk-8-jdk \
+        maven \
+        python3.7 \
+        python3-pip \
+    && python3.7 -m pip install -U setuptools \
+    && python3.7 -m pip install -U pip \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN apt install openjdk-8-jdk -y \
-	&& apt install maven -y \
-	&& apt install git -y \
-	&& git clone https://github.com/MyersResearchGroup/iBioSim.git --branch 3.1.0 --depth 1
+# Install iBioSim
+RUN git clone https://github.com/MyersResearchGroup/iBioSim.git --branch ${VERSION} --depth 1 \
+    && cd iBioSim \
+    && mvn package -Dmaven.javadoc.skip=true
 
-RUN cd iBioSim \
-	&& mvn package -Dmaven.javadoc.skip=true
+# Install reb2sac and GeneNet
+# TODO: compile reb2sac outside of image and copy it in
 
 # Copy code for command-line interface into image and install it
 COPY . /root/Biosimulators_iBioSim
 RUN python3.7 -m pip install /root/Biosimulators_iBioSim
-
-#Installing reb2sac and GeneNet
-#need to compile reb2sac outside of image and copy it in 
 
 # Entrypoint
 ENTRYPOINT ["iBioSim"]
