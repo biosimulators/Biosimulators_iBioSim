@@ -1,4 +1,11 @@
-# Biosimulators_iBioSim
+![Latest version](https://img.shields.io/github/v/tag/biosimulators/Biosimulators_iBioSim)
+[![PyPI](https://img.shields.io/pypi/v/biosimulators_ibiosim)](https://pypi.org/project/biosimulators_ibiosim/)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/biosimulators/Biosimulators_iBioSim/workflow-id)](https://github.com/biosimulators/Biosimulators_iBioSim/actions?query=workflow%3Aworkflow-id)
+[![Documentation](https://img.shields.io/github/license/biosimulators/Biosimulators_iBioSim?badges-awesome-green.svg)](https://biosimulators.github.io/Biosimulators_iBioSim/)
+[![Issues](https://img.shields.io/github/issues/biosimulators/Biosimulators_iBioSim)](https://github.com/biosimulators/Biosimulators_iBioSim/issues)
+[![License](https://img.shields.io/github/license/biosimulators/Biosimulators_iBioSim?badges-awesome-green.svg)](https://github.com/biosimulators/Biosimulators_iBioSim/blob/dev/LICENSE)
+
+# BioSimulators-iBioSim
 BioSimulators-compliant command-line interface to the [iBioSim](https://github.com/MyersResearchGroup/iBioSim) simulation program.
 
 This command-line interface and Docker image enable users to use iBioSim to execute [COMBINE/OMEX archives](https://combinearchive.org/) that describe one or more simulation experiments (in [SED-ML format](https://sed-ml.org)) of one or more models (in [SBML format](http://sbml.org])).
@@ -10,6 +17,7 @@ A simple web application and web service for using iBioSim to execute COMBINE/OM
 ## Contents
 * [Installation](#installation)
 * [Usage](#local-usage)
+* [Documentation](#documentation)
 * [License](#license)
 * [Development team](#development-team)
 * [Questions and comments](#questions-and-comments)
@@ -20,7 +28,9 @@ A simple web application and web service for using iBioSim to execute COMBINE/OM
 docker pull ghcr.io/MyersResearchGroup/ibiosim
 ```
 
-## Local Usage
+## Usage
+
+### Local Usage
 ```
 usage: ibiosim [-h] [-d] [-q] -i ARCHIVE [-o OUT_DIR] [-v]
 
@@ -38,7 +48,7 @@ optional arguments:
   -v, --version         show program's version number and exit
 ```
 
-## Usage Through Docker Container
+### Usage Through Docker Container
 ```
 docker run \
   --tty \
@@ -49,6 +59,9 @@ docker run \
     -i /root/in/<Need to Update to Cleaned Archive> \
     -o /root/out
 ```
+
+## Documentation
+Documentation is available at https://biosimulators.github.io/Biosimulators_iBioSim/.
 
 ## License
 This package is released under the [Apache-2.0](License)
