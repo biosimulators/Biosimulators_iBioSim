@@ -1,3 +1,7 @@
 *.pyc
 _pycache__/
 *.egg-info/
+
+docs/.doctrees/
+docs/_raw_sources/
+docs/_sources/
