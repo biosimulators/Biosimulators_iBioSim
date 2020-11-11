@@ -2,20 +2,31 @@
 FROM ubuntu:18.04
 
 # Version
-ENV VERSION=3.1.0
+ARG VERSION=3.1.0
 
-# BioContainers metadata
-LABEL base_image="ubuntu:18.04"
-LABEL version="0.0.1"
-LABEL software="iBioSim"
-LABEL software.version="${VERSION}"
-LABEL about.summary="CAD tool aimed for the modeling, analysis, and design of genetic circuits"
-LABEL about.home="https://github.com/MyersResearchGroup/iBioSim"
-LABEL about.documentation="https://github.com/MyersResearchGroup/iBioSim"
-LABEL about.license_file="https://github.com/MyersResearchGroup/iBioSim/blob/master/LICENSE.txt"
-LABEL about.license="Apache-2.0"
-LABEL about.tags="kinetic modeling,dynamical simulation,systems biology,biochemical networks,SBML,SED-ML,COMBINE,OMEX,BioSimulators"
-LABEL maintainer="Chris Myers <chris.myers@colorado.edu>"
+# Open Containers Initiative and BioContainers metadata
+LABEL \
+    org.opencontainers.image.title="iBioSim" \
+    org.opencontainers.image.version="${VERSION}" \
+    org.opencontainers.image.description="CAD tool aimed for the modeling, analysis, and design of genetic circuits" \
+    org.opencontainers.image.url="https://github.com/MyersResearchGroup/iBioSim" \
+    org.opencontainers.image.documentation="https://github.com/MyersResearchGroup/iBioSim" \
+    org.opencontainers.image.source="https://github.com/biosimulators/Biosimulators_iBioSim" \
+    org.opencontainers.image.authors="Chris Myers <chris.myers@colorado.edu>" \
+    org.opencontainers.image.vendor="Chris Myers" \
+    org.opencontainers.image.licenses="Apache-2.0" \
+    \
+    base_image="ubuntu:18.04" \
+    version="0.0.1" \
+    software="iBioSim" \
+    software.version="${VERSION}" \
+    about.summary="CAD tool aimed for the modeling, analysis, and design of genetic circuits" \
+    about.home="https://github.com/MyersResearchGroup/iBioSim" \
+    about.documentation="https://github.com/MyersResearchGroup/iBioSim" \
+    about.license_file="https://github.com/MyersResearchGroup/iBioSim/blob/master/LICENSE.txt" \
+    about.license="SPDX:Apache-2.0" \
+    about.tags="kinetic modeling,dynamical simulation,systems biology,biochemical networks,SBML,SED-ML,COMBINE,OMEX,BioSimulators" \
+    maintainer="Chris Myers <chris.myers@colorado.edu>"
 
 # Install requirements
 RUN apt-get update -y \
