@@ -209,7 +209,7 @@
       "id": "rel_tol",
       "name": "Relative tolerance",
       "type": "float",
-      "value": 0.000001
+      "value": "0.000001"
     }]
   }],
   "biosimulators": {
