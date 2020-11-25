@@ -3,101 +3,121 @@
   "name": "iBioSim",
   "version": "3.1.0",
   "description": "iBioSim is a computer-aided design (CAD) tool aimed for the modeling, analysis, and design of genetic circuits. While iBioSim primarily targets models of genetic circuits, models representing metabolic networks, cell-signaling pathways, and other biological and chemical systems can also be analyzed.",
-  "url": "https://github.com/MyersResearchGroup/iBioSim",
-  "image": "ghcr.io/myersresearchgroup/biosimulators_ibiosim/ibiosim:latest",
-  "format": {
-    "namespace": "EDAM",
-    "id": "format_3973"
+  "urls": [{"type": "Home page", "url": "https://github.com/MyersResearchGroup/iBioSim"}],
+  "image": {
+    "url": "ghcr.io/myersresearchgroup/biosimulators_ibiosim/ibiosim:latest",
+    "format": {
+      "namespace": "EDAM",
+      "id": "format_3973", "version": null
+    }
   },
   "authors": [{
       "firstName": "Chris",
       "middleName": "J.",
-      "lastName": "Myers"
+      "lastName": "Myers",
+            "identifiers": []
     },
     {
       "firstName": "Leandro",
       "middleName": null,
-      "lastName": "Watanabe"
+      "lastName": "Watanabe",
+            "identifiers": []
     },
     {
       "firstName": "Tramy",
       "middleName": null,
-      "lastName": "Nguyen"
+      "lastName": "Nguyen",
+            "identifiers": []
     },
     {
       "firstName": "Pedro",
       "middleName": null,
-      "lastName": "Fontanarosa"
+      "lastName": "Fontanarosa",
+            "identifiers": []
     },
     {
       "firstName": "Michael",
       "middleName": null,
-      "lastName": "Zhang"
+      "lastName": "Zhang",
+            "identifiers": []
     },
     {
       "firstName": "Zach",
       "middleName": null,
-      "lastName": "Zundel"
+      "lastName": "Zundel",
+            "identifiers": []
     },
     {
       "firstName": "Mihai",
       "middleName": null,
-      "lastName": "Glont"
+      "lastName": "Glont",
+            "identifiers": []
     },
     {
       "firstName": "Nathan",
       "middleName": null,
-      "lastName": "Barker"
+      "lastName": "Barker",
+            "identifiers": []
     },
     {
       "firstName": "Scott",
       "middleName": null,
-      "lastName": "Glass"
+      "lastName": "Glass",
+            "identifiers": []
     },
     {
       "firstName": "Kevin",
       "middleName": null,
-      "lastName": "Jones"
+      "lastName": "Jones",
+            "identifiers": []
     },
     {
       "firstName": "Hiroyuki",
       "middleName": null,
-      "lastName": "Kuwahara"
+      "lastName": "Kuwahara",
+            "identifiers": []
     },
     {
       "firstName": "Curtis",
       "middleName": null,
-      "lastName": "Madsen"
+      "lastName": "Madsen",
+            "identifiers": []
     },
     {
       "firstName": "Nam",
       "middleName": null,
-      "lastName": "Nguyen"
+      "lastName": "Nguyen",
+            "identifiers": []
     },
     {
       "firstName": "Tyler",
       "middleName": null,
-      "lastName": "Patterson"
+      "lastName": "Patterson",
+            "identifiers": []
     },
     {
       "firstName": "Nicholas",
       "middleName": null,
-      "lastName": "Roehner"
+      "lastName": "Roehner",
+            "identifiers": []
     },
     {
       "firstName": "Jason",
       "middleName": null,
-      "lastName": "Stevens"
+      "lastName": "Stevens",
+            "identifiers": []
     },
     {
       "firstName": "Payton",
       "middleName": "J.",
-      "lastName": "Thomas"
+      "lastName": "Thomas",
+            "identifiers": []
     },
     {
       "firstName": "Zhen",
       "middleName": null,
-      "lastName": "Zhang"
+      "lastName": "Zhang",
+            "identifiers": []
     }
   ],
   "references": {
@@ -179,15 +199,15 @@
     }],
     "modelFormats": [{
       "namespace": "EDAM",
-      "id": "format_2585"
+      "id": "format_2585", "version": null
     }],
     "simulationFormats": [{
       "namespace": "EDAM",
-      "id": "format_3685"
+      "id": "format_3685", "version": null
     }],
     "archiveFormats": [{
       "namespace": "EDAM",
-      "id": "format_3686"
+      "id": "format_3686", "version": null
     }],
     "citations": [{
       "title": "Low-order classical Runge-Kutta formulas with stepsize control and their application to some heat transfer problems",
@@ -209,14 +229,17 @@
       "id": "rel_tol",
       "name": "Relative tolerance",
       "type": "float",
-      "value": "0.000001"
-    }]
+      "value": "0.000001",
+      "recommendedRange": null,
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+    }],
+    "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
   }],
+  "interfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+  "supportedProgrammingLanguages": [],
   "biosimulators": {
-    "specificationsVersion": "1.0.0",
+    "specificationVersion": "1.0.0",
     "imageVersion": "1.0.0",
     "validated": false
-  },
-  "created": "2020-01-01T12:00:00Z",
-  "updated": "2020-01-01T12:00:00Z"
+  }
 }
