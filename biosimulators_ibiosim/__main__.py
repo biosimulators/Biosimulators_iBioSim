@@ -14,6 +14,7 @@ App = build_cli('ibiosim', __version__,
                 'iBioSim', get_ibiosim_version(), 'https://github.com/MyersResearchGroup/iBioSim',
                 exec_sedml_docs_in_combine_archive)
 
+
 def main():
     with App() as app:
         app.run()
