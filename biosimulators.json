@@ -234,6 +234,20 @@
       "recommendedRange": null,
       "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
     }],
+    "dependentDimensions": [{
+      "namespace": "SIO",
+      "id": "SIO_000418"
+    }],
+    "dependentVariableTargetPatterns": [
+      {
+        "variables": "species concentrations",
+        "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+      },
+      {
+        "variables": "parameter values",
+        "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
+      }
+    ],
     "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
     "dependencies": null
   }],
@@ -244,6 +258,7 @@
   "biosimulators": {
     "specificationVersion": "1.0.0",
     "imageVersion": "1.0.0",
-    "validated": false
+    "validated": false,
+    "validationTests": null
   }
 }
