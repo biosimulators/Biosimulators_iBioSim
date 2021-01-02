@@ -6,48 +6,13 @@
 :License: Apache-2.0
 """
 
-from .core import exec_combine_archive
-import biosimulators_ibiosim
-import cement
+from ._version import __version__
+from .core import get_ibiosim_version, exec_sedml_docs_in_combine_archive
+from biosimulators_utils.simulator.cli import build_cli
 
-
-class BaseController(cement.Controller):
-    """ Base controller for command line application """
-
-    class Meta:
-        label = 'base'
-        description = ("BioSimulatiors-compliant command-line interface to the "
-                       "iBioSim simulation program <https://github.com/MyersResearchGroup/iBioSim>.")
-        help = "iBioSim"
-        arguments = [
-            (['-i', '--archive'], dict(type=str,
-                                       required=True,
-                                       help='Path to OMEX file which contains one or more SED-ML-encoded simulation experiments')),
-            (['-o', '--out-dir'], dict(type=str,
-                                       default='.',
-                                       help='Directory to save outputs')),
-            (['-v', '--version'], dict(action='version',
-                                       version=biosimulators_ibiosim.__version__)),
-        ]
-
-    @cement.ex(hide=True)
-    def _default(self):
-        args = self.app.pargs        
-        try:
-            exec_combine_archive(args.archive, args.out_dir)
-        except Exception as exception:
-            raise SystemExit(str(exception)) from exception
-
-
-class App(cement.App):
-    """ Command line application """
-    class Meta:
-        label = 'iBioSim'
-        base_controller = 'base'
-        handlers = [
-            BaseController,
-        ]
-
+App = build_cli('ibiosim', __version__,
+                'iBioSim', get_ibiosim_version(), 'https://github.com/MyersResearchGroup/iBioSim',
+                exec_sedml_docs_in_combine_archive)
 
 def main():
     with App() as app:

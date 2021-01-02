@@ -6,13 +6,9 @@
 :License: Apache-2.0
 """
 
-from Biosimulations_utils.simulator.testing import SbmlSedmlCombineSimulatorValidator
-from my_simulator import __main__
-import my_simulator
 import capturer
 import docker
 import os
-import PyPDF2
 import shutil
 import tempfile
 import unittest
@@ -105,16 +101,3 @@ class CliTestCase(unittest.TestCase):
         self.assertEqual(set(os.listdir(os.path.join(dirname, 'ex1', 'BIOMD0000000297'))), set(['plot_1_task1.pdf', 'plot_3_task1.pdf']))
         self.assertEqual(set(os.listdir(os.path.join(dirname, 'ex2', 'BIOMD0000000297'))), set(['plot_1_task1.pdf', 'plot_3_task1.pdf']))
 
-        files = [
-            os.path.join(dirname, 'ex1', 'BIOMD0000000297', 'plot_1_task1.pdf'),
-            os.path.join(dirname, 'ex1', 'BIOMD0000000297', 'plot_3_task1.pdf'),
-            os.path.join(dirname, 'ex2', 'BIOMD0000000297', 'plot_1_task1.pdf'),
-            os.path.join(dirname, 'ex2', 'BIOMD0000000297', 'plot_3_task1.pdf'),
-        ]
-        for file in files:
-            with open(file, 'rb') as file:
-                PyPDF2.PdfFileReader(file)
-
-    def test_validator(self):
-        validator = SbmlSedmlCombineSimulatorValidator()
-        validator.run(self.DOCKER_IMAGE)

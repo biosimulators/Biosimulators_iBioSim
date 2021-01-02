@@ -1,9 +1,7 @@
-![Latest version](https://img.shields.io/github/v/tag/biosimulators/Biosimulators_iBioSim)
+[![Latest release](https://img.shields.io/github/v/tag/biosimulators/Biosimulators_iBioSim)](https://github.com/biosimulations/Biosimulators_iBioSim/releases)
 [![PyPI](https://img.shields.io/pypi/v/biosimulators_ibiosim)](https://pypi.org/project/biosimulators_ibiosim/)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/biosimulators/Biosimulators_iBioSim/workflow-id)](https://github.com/biosimulators/Biosimulators_iBioSim/actions?query=workflow%3Aworkflow-id)
-[![Documentation](https://img.shields.io/github/license/biosimulators/Biosimulators_iBioSim?badges-awesome-green.svg)](https://biosimulators.github.io/Biosimulators_iBioSim/)
-[![Issues](https://img.shields.io/github/issues/biosimulators/Biosimulators_iBioSim)](https://github.com/biosimulators/Biosimulators_iBioSim/issues)
-[![License](https://img.shields.io/github/license/biosimulators/Biosimulators_iBioSim?badges-awesome-green.svg)](https://github.com/biosimulators/Biosimulators_iBioSim/blob/dev/LICENSE)
+[![CI status](https://github.com/biosimulators/Biosimulators_iBioSim/workflows/Continuous%20integration/badge.svg)](https://github.com/biosimulators/Biosimulators_iBioSim/actions?query=workflow%3A%22Continuous+integration%22)
+[![Test coverage](https://codecov.io/gh/biosimulators/Biosimulators_iBioSim/branch/dev/graph/badge.svg)](https://codecov.io/gh/biosimulators/Biosimulators_iBioSim)
 
 # BioSimulators-iBioSim
 BioSimulators-compliant command-line interface to the [iBioSim](https://github.com/MyersResearchGroup/iBioSim) simulation program.
@@ -49,14 +47,18 @@ optional arguments:
 ```
 
 ### Usage Through Docker Container
+The entrypoint to the Docker image supports the same command-line interface described above. 
+
+For example, the following command could be used to use the Docker image to execute the COMBINE/OMEX archive `./modeling-study.omex` and save its outputs to `./`.
+
 ```
 docker run \
   --tty \
   --rm \
-  --mount type=bind,source="$(pwd)"/tests/fixtures,target=/root/in,readonly \
-  --mount type=bind,source="$(pwd)"/tests/results,target=/root/out \
+  --mount type=bind,source="$(pwd)",target=/root/in,readonly \
+  --mount type=bind,source="$(pwd)",target=/root/out \
   ghcr.io/MyersResearchGroup/ibiosim:latest \
-    -i /root/in/<Need to Update to Cleaned Archive> \
+    -i /root/in/modeling-study.omex \
     -o /root/out
 ```
 

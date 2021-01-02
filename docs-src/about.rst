@@ -3,7 +3,7 @@ About BioSimulators-iBioSim
 
 License
 -------
-This package is released under the `MIT License <https://github.com/biosimulators/BioSimulators_iBioSim/blob/dev/LICENSE>`_. iBioSim is released under the `Apache 2.0 License <https://github.com/MyersResearchGroup/iBioSim/blob/master/LICENSE.txt>`_.
+This package is released under the `MIT License <https://github.com/biosimulators/Biosimulators_iBioSim/blob/dev/LICENSE>`_. iBioSim is released under the `Apache 2.0 License <https://github.com/MyersResearchGroup/iBioSim/blob/master/LICENSE.txt>`_.
 
 Development team
 ----------------
