@@ -137,6 +137,7 @@ jobs:
           echo "::set-output name=dockerRegistry::${DOCKER_REGISTRY}"
 
       - name: Build Docker image
+        if: false  # TODO: enable building Docker image
         run: |
           REVISION=$(git rev-parse HEAD)
           CREATED=$(date --rfc-3339=seconds | sed 's/ /T/')
@@ -273,7 +274,8 @@ jobs:
 
       # Create PyPI release
       - name: Create PyPI release
-        if: startsWith(github.ref, 'refs/tags/') && steps.determine-if-release-needed.outputs.release == '1'
+        # TODO: enable building Docker image
+        if: false && startsWith(github.ref, 'refs/tags/') && steps.determine-if-release-needed.outputs.release == '1'
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
@@ -304,7 +306,8 @@ jobs:
 
       # build Docker image and push to GitHub Container Registry
       - name: Push Docker image
-        if: steps.determine-if-release-needed.outputs.release == '1'
+        # TODO: enable building Docker image
+        if: false && steps.determine-if-release-needed.outputs.release == '1'
         run: |
           docker login ${{ steps.get-docker-image-tag.outputs.dockerRegistry }} \
             --username ${{ secrets.DOCKER_REGISTRY_USERNAME }} \
@@ -317,7 +320,8 @@ jobs:
 
       # Submit to BioSimulators registry
       - name: Submit to BioSimulators registry
-        if: steps.determine-if-release-needed.outputs.release == '1'
+        # TODO: enable building Docker image
+        if: false && steps.determine-if-release-needed.outputs.release == '1' 
         run: |
           REVISION=$(git rev-parse HEAD)
           curl \
