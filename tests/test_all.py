@@ -6,8 +6,10 @@
 :License: Apache-2.0
 """
 
-import capturer
-import docker
+from biosimulators_ibiosim import __main__
+from biosimulators_ibiosim.core import get_ibiosim_version, exec_sedml_docs_in_combine_archive
+from biosimulators_utils.simulator.exec import exec_sedml_docs_in_archive_with_containerized_simulator
+from unittest import mock
 import os
 import shutil
 import tempfile
@@ -15,7 +17,7 @@ import unittest
 
 
 class CliTestCase(unittest.TestCase):
-    EXAMPLE_ARCHIVE_FILENAME = 'tests/fixtures/BIOMD0000000297.omex'
+    EXAMPLE_ARCHIVE_FILENAME = os.path.join(os.path.dirname(__file__), 'fixtures', 'BIOMD0000000297.omex')
     DOCKER_IMAGE = 'ghcr.io/myersresearchgroup/biosimulators_ibiosim/ibiosim:latest'
 
     def setUp(self):
@@ -24,80 +26,36 @@ class CliTestCase(unittest.TestCase):
     def tearDown(self):
         shutil.rmtree(self.dirname)
 
-    def test_help(self):
+    def test_get_ibiosim_version(self):
+        self.assertEqual(get_ibiosim_version(), None)
+
+    @unittest.skip('Method not yet implemented')
+    def test_exec_sedml_docs_in_combine_archive(self):
+        # execute COMBINE archive
+        exec_sedml_docs_in_combine_archive(self.EXAMPLE_ARCHIVE_FILENAME, self.dirname)
+
+        # assert outputs created correctly
+
+    def test_app_help(self):
         with self.assertRaises(SystemExit):
             with __main__.App(argv=['--help']) as app:
                 app.run()
 
-    def test_version(self):
-        with __main__.App(argv=['-v']) as app:
-            with capturer.CaptureOutput(merged=False, relay=False) as captured:
-                with self.assertRaises(SystemExit):
-                    app.run()
-                self.assertIn(my_simulator.__version__, captured.stdout.get_text())
-                self.assertEqual(captured.stderr.get_text(), '')
+    def test_main_help(self):
+        with mock.patch('sys.argv', ['', '--help']):
+            with self.assertRaises(SystemExit) as context:
+                __main__.main()
+                self.assertRegex(context.Exception, 'usage: ')
 
-        with __main__.App(argv=['--version']) as app:
-            with capturer.CaptureOutput(merged=False, relay=False) as captured:
-                with self.assertRaises(SystemExit):
-                    app.run()
-                self.assertIn(my_simulator.__version__, captured.stdout.get_text())
-                self.assertEqual(captured.stderr.get_text(), '')
+    @unittest.skip('Docker image not yet built')
+    def test_exec_sedml_docs_in_combine_archive_with_docker_image(self):
+        archive_filename = self.EXAMPLE_ARCHIVE_FILENAME
 
-    def test_sim_short_arg_names(self):
-        with __main__.App(argv=['-i', self.EXAMPLE_ARCHIVE_FILENAME, '-o', self.dirname]) as app:
-            app.run()
-        self.assert_outputs_created(self.dirname)
+        # environment variables to pass to container
+        env = {}
 
-    def test_sim_long_arg_names(self):
-        with __main__.App(argv=['--archive', self.EXAMPLE_ARCHIVE_FILENAME, '--out-dir', self.dirname]) as app:
-            app.run()
-        self.assert_outputs_created(self.dirname)
+        # execute COMBINE archive
+        exec_sedml_docs_in_archive_with_containerized_simulator(
+            archive_filename, self.dirname, self.DOCKER_IMAGE, environment=env, pull_docker_image=False)
 
-    def test_build_docker_image(self):
-        docker_client = docker.from_env()
-        docker_client.images.build(
-            path='.',
-            dockerfile='Dockerfile',
-            pull=True,
-            rm=True,
-        )
-
-    def test_sim_with_docker_image(self):
-        docker_client = docker.from_env()
-
-        # setup input and output directories
-        in_dir = os.path.join(self.dirname, 'in')
-        out_dir = os.path.join(self.dirname, 'out')
-        os.makedirs(in_dir)
-        os.makedirs(out_dir)
-
-        # copy model and simulation to temporary directory which will be mounted into container
-        shutil.copyfile(self.EXAMPLE_ARCHIVE_FILENAME, os.path.join(in_dir, os.path.basename(self.EXAMPLE_ARCHIVE_FILENAME)))
-
-        # run image
-        docker_client.containers.run(
-            self.DOCKER_IMAGE
-            volumes={
-                in_dir: {
-                    'bind': '/root/in',
-                    'mode': 'ro',
-                },
-                out_dir: {
-                    'bind': '/root/out',
-                    'mode': 'rw',
-                }
-            },
-            command=['-i', '/root/in/' + os.path.basename(self.EXAMPLE_ARCHIVE_FILENAME), '-o', '/root/out'],
-            tty=True,
-            remove=True)
-
-        self.assert_outputs_created(out_dir)
-
-    def assert_outputs_created(self, dirname):
-        self.assertEqual(set(os.listdir(dirname)), set(['ex1', 'ex2']))
-        self.assertEqual(set(os.listdir(os.path.join(dirname, 'ex1'))), set(['BIOMD0000000297']))
-        self.assertEqual(set(os.listdir(os.path.join(dirname, 'ex2'))), set(['BIOMD0000000297']))
-        self.assertEqual(set(os.listdir(os.path.join(dirname, 'ex1', 'BIOMD0000000297'))), set(['plot_1_task1.pdf', 'plot_3_task1.pdf']))
-        self.assertEqual(set(os.listdir(os.path.join(dirname, 'ex2', 'BIOMD0000000297'))), set(['plot_1_task1.pdf', 'plot_3_task1.pdf']))
-
+        # assert outputs created correctly
