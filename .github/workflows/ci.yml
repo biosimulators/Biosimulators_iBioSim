@@ -321,7 +321,7 @@ jobs:
       # Submit to BioSimulators registry
       - name: Submit to BioSimulators registry
         # TODO: enable building Docker image
-        if: false && steps.determine-if-release-needed.outputs.release == '1' 
+        if: false && steps.determine-if-release-needed.outputs.release == '1'
         run: |
           REVISION=$(git rev-parse HEAD)
           curl \

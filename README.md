@@ -47,7 +47,7 @@ optional arguments:
 ```
 
 ### Usage Through Docker Container
-The entrypoint to the Docker image supports the same command-line interface described above. 
+The entrypoint to the Docker image supports the same command-line interface described above.
 
 For example, the following command could be used to use the Docker image to execute the COMBINE/OMEX archive `./modeling-study.omex` and save its outputs to `./`.
 
