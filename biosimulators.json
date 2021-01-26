@@ -407,7 +407,7 @@
           "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
         }
       ],
-      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "availableSoftwareInterfaceTypes": ["desktop application"],
       "dependencies": null
     },
     {
@@ -454,7 +454,7 @@
           "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
         }
       ],
-      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "availableSoftwareInterfaceTypes": ["desktop application"],
       "dependencies": null
     },
     {
@@ -501,7 +501,7 @@
           "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
         }
       ],
-      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "availableSoftwareInterfaceTypes": ["desktop application"],
       "dependencies": null
     },
     {
@@ -544,7 +544,7 @@
         "type": "integer",
         "value": 1,
         "recommendedRange": [1, 2],
-        "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+        "availableSoftwareInterfaceTypes": ["desktop application"]
       }],
       "dependentDimensions": [{
         "namespace": "SIO",
@@ -769,7 +769,7 @@
           "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
         }
       ],
-      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "availableSoftwareInterfaceTypes": ["desktop application"],
       "dependencies": null
     },
     {
@@ -825,7 +825,7 @@
         "type": "integer",
         "value": 0,
         "recommendedRange": null,
-        "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+        "availableSoftwareInterfaceTypes": ["desktop application"]
       }],
       "dependentDimensions": [{
         "namespace": "SIO",
@@ -883,7 +883,7 @@
         "type": "integer",
         "value": 0,
         "recommendedRange": null,
-        "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+        "availableSoftwareInterfaceTypes": ["desktop application"]
       }],
       "dependentDimensions": [{
         "namespace": "SIO",
@@ -937,7 +937,7 @@
         "variables": "reaction fluxes",
         "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfReactions/sbml:reaction/@flux"
       }],
-      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "availableSoftwareInterfaceTypes": ["desktop application"],
       "dependencies": null
     },
     {
@@ -988,7 +988,7 @@
         "variables": "reaction fluxes",
         "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfReactions/sbml:reaction/@flux"
       }],
-      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "availableSoftwareInterfaceTypes": ["desktop application"],
       "dependencies": null
     },
     {
