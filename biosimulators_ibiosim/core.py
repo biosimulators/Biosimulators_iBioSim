@@ -7,9 +7,9 @@
 """
 
 from biosimulators_utils.plot.data_model import PlotFormat  # noqa: F401
-from biosimulators_utils.report.data_model import ReportFormat, DataGeneratorVariableResults  # noqa: F401
+from biosimulators_utils.report.data_model import ReportFormat, VariableResults  # noqa: F401
 from biosimulators_utils.sedml.data_model import (Task, ModelLanguage, UniformTimeCourseSimulation,  # noqa: F401
-                                                  DataGeneratorVariable, DataGeneratorVariableSymbol)
+                                                  Variable, Symbol)
 import os
 import subprocess
 # import zipfile

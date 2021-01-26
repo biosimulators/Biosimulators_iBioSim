@@ -1,1 +1,1 @@
-biosimulators_utils >= 0.1.28
+biosimulators_utils >= 0.1.34

@@ -54,7 +54,8 @@ RUN git clone https://github.com/MyersResearchGroup/iBioSim.git --branch ${SIMUL
 COPY . /root/Biosimulators_iBioSim
 RUN python3.7 -m pip install /root/Biosimulators_iBioSim \
     && rm -rf /root/Biosimulators_iBioSim
-ENV MPLBACKEND=PDF
+ENV VERBOSE=0 \
+    MPLBACKEND=PDF
 
 # Entrypoint
 ENTRYPOINT ["iBioSim"]
