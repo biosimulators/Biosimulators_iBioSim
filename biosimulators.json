@@ -3,12 +3,17 @@
   "name": "iBioSim",
   "version": "3.1.0",
   "description": "iBioSim is a computer-aided design (CAD) tool aimed for the modeling, analysis, and design of genetic circuits. While iBioSim primarily targets models of genetic circuits, models representing metabolic networks, cell-signaling pathways, and other biological and chemical systems can also be analyzed.",
-  "urls": [{"type": "Home page", "url": "https://github.com/MyersResearchGroup/iBioSim"}],
+  "urls": [{
+    "type": "Home page",
+    "url": "https://github.com/MyersResearchGroup/iBioSim"
+  }],
   "image": {
     "url": "ghcr.io/myersresearchgroup/biosimulators_ibiosim/ibiosim:latest",
     "format": {
       "namespace": "EDAM",
-      "id": "format_3973", "version": null, "supportedFeatures": []
+      "id": "format_3973",
+      "version": null,
+      "supportedFeatures": []
     },
     "operatingSystemType": "Linux"
   },
@@ -16,119 +21,113 @@
       "firstName": "Chris",
       "middleName": "J.",
       "lastName": "Myers",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Leandro",
       "middleName": null,
       "lastName": "Watanabe",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Tramy",
       "middleName": null,
       "lastName": "Nguyen",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Pedro",
       "middleName": null,
       "lastName": "Fontanarosa",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Michael",
       "middleName": null,
       "lastName": "Zhang",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Zach",
       "middleName": null,
       "lastName": "Zundel",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Mihai",
       "middleName": null,
       "lastName": "Glont",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Nathan",
       "middleName": null,
       "lastName": "Barker",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Scott",
       "middleName": null,
       "lastName": "Glass",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Kevin",
       "middleName": null,
       "lastName": "Jones",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Hiroyuki",
       "middleName": null,
       "lastName": "Kuwahara",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Curtis",
       "middleName": null,
       "lastName": "Madsen",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Nam",
       "middleName": null,
       "lastName": "Nguyen",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Tyler",
       "middleName": null,
       "lastName": "Patterson",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Nicholas",
       "middleName": null,
       "lastName": "Roehner",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Jason",
       "middleName": null,
       "lastName": "Stevens",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Payton",
       "middleName": "J.",
       "lastName": "Thomas",
-            "identifiers": []
+      "identifiers": []
     },
     {
       "firstName": "Zhen",
       "middleName": null,
       "lastName": "Zhang",
-            "identifiers": []
+      "identifiers": []
     }
   ],
   "references": {
-    "identifiers": [
-      {
-        "namespace": "pypi",
-        "id": "biosimulators-ibiosim",
-        "url": "https://pypi.org/project/biosimulators-ibiosim/"
-      }
-    ],
+    "identifiers": [],
     "citations": [{
         "title": "Design and test of genetic circuits using iBioSim",
         "authors": "Curtis Madsen, Chris J. Myers, Tyler Patterson, Nicholas Roehner, Jason T. Stevens & Chris Winstead",
@@ -188,69 +187,868 @@
     "id": "Apache-2.0"
   },
   "algorithms": [{
-    "id": "hode",
-    "name": "Runge-Kutta-Fehlberg (Hierarchical)",
-    "kisaoId": {
-      "namespace": "KISAO",
-      "id": "KISAO_0000086"
-    },
-    "modelingFrameworks": [{
-      "namespace": "SBO",
-      "id": "SBO_0000293"
-    }],
-    "modelFormats": [{
-      "namespace": "EDAM",
-      "id": "format_2585", "version": null, "supportedFeatures": []
-    }],
-    "simulationFormats": [{
-      "namespace": "EDAM",
-      "id": "format_3685", "version": "L1V3", "supportedFeatures": []
-    }],
-    "archiveFormats": [{
-      "namespace": "EDAM",
-      "id": "format_3686", "version": null, "supportedFeatures": []
-    }],
-    "citations": [{
-      "title": "Low-order classical Runge-Kutta formulas with stepsize control and their application to some heat transfer problems",
-      "authors": "Erwin Fehlberg",
-      "journal": "NASA Technical Report",
-      "pages": "1-49",
-      "year": 1969,
-      "identifiers": [{
-        "namespace": "NTRS",
-        "id": "NASA-TR-R-315",
-        "url": "https://ntrs.nasa.gov/citations/19690021375"
-      }]
-    }],
-    "parameters": [{
+      "id": "ode",
+      "name": "Runge-Kutta-Fehlberg",
       "kisaoId": {
         "namespace": "KISAO",
-        "id": "KISAO_0000209"
+        "id": "KISAO_0000086"
       },
-      "id": "rel_tol",
-      "name": "Relative tolerance",
-      "type": "float",
-      "value": "0.000001",
-      "recommendedRange": null,
-      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
-    }],
-    "dependentDimensions": [{
-      "namespace": "SIO",
-      "id": "SIO_000418"
-    }],
-    "dependentVariableTargetPatterns": [
-      {
-        "variables": "species concentrations",
-        "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000293"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [{
+        "title": "Low-order classical Runge-Kutta formulas with stepsize control and their application to some heat transfer problems",
+        "authors": "Erwin Fehlberg",
+        "journal": "NASA Technical Report",
+        "pages": "1-49",
+        "year": 1969,
+        "identifiers": [{
+          "namespace": "NTRS",
+          "id": "NASA-TR-R-315",
+          "url": "https://ntrs.nasa.gov/citations/19690021375"
+        }]
+      }],
+      "parameters": [{
+          "kisaoId": {
+            "namespace": "KISAO",
+            "id": "KISAO_0000209"
+          },
+          "id": "sErr",
+          "name": "Relative tolerance",
+          "type": "float",
+          "value": 1e-3,
+          "recommendedRange": null,
+          "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+        },
+        {
+          "kisaoId": {
+            "namespace": "KISAO",
+            "id": "KISAO_0000211"
+          },
+          "id": "aErr",
+          "name": "Absolute tolerance",
+          "type": "float",
+          "value": 1e-7,
+          "recommendedRange": null,
+          "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+        },
+        {
+          "kisaoId": {
+            "namespace": "KISAO",
+            "id": "KISAO_0000614"
+          },
+          "id": "sim",
+          "name": "Implementation",
+          "type": "string",
+          "value": "C",
+          "recommendedRange": ["C", "Java"],
+          "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+        }
+      ],
+      "dependentDimensions": [{
+        "namespace": "SIO",
+        "id": "SIO_000418"
+      }],
+      "dependentVariableTargetPatterns": [{
+          "variables": "species concentrations",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+        },
+        {
+          "variables": "parameter values",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
+        }
+      ],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    },
+    {
+      "id": "hode",
+      "name": "Hierarchical Fehlberg method",
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000607"
       },
-      {
-        "variables": "parameter values",
-        "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
-      }
-    ],
-    "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
-    "dependencies": null
-  }],
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000293"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [{
+        "title": "Hierarchical stochastic simulation algorithm for SBML models of genetic circuits",
+        "authors": "Leandro H. Watanabe & Chris J. Myers",
+        "journal": "Frontiers in Bioengineering and Biotechnology",
+        "volume": 2,
+        "pages": "55",
+        "year": 2014,
+        "identifiers": [{
+          "namespace": "DOI",
+          "id": "10.3389/fbioe.2014.00055",
+          "url": "https://doi.org/10.3389/fbioe.2014.00055"
+        }]
+      }],
+      "parameters": [{
+          "kisaoId": {
+            "namespace": "KISAO",
+            "id": "KISAO_0000209"
+          },
+          "id": "sErr",
+          "name": "Relative tolerance",
+          "type": "float",
+          "value": 1e-3,
+          "recommendedRange": null,
+          "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+        },
+        {
+          "kisaoId": {
+            "namespace": "KISAO",
+            "id": "KISAO_0000211"
+          },
+          "id": "aErr",
+          "name": "Absolute tolerance",
+          "type": "float",
+          "value": 1e-7,
+          "recommendedRange": null,
+          "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+        }
+      ],
+      "dependentDimensions": [{
+        "namespace": "SIO",
+        "id": "SIO_000418"
+      }],
+      "dependentVariableTargetPatterns": [{
+          "variables": "species concentrations",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+        },
+        {
+          "variables": "parameter values",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
+        }
+      ],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    },
+    {
+      "id": "euler",
+      "name": "Forward Euler method",
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000030"
+      },
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000293"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [],
+      "parameters": [],
+      "dependentDimensions": [{
+        "namespace": "SIO",
+        "id": "SIO_000418"
+      }],
+      "dependentVariableTargetPatterns": [{
+          "variables": "species concentrations",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+        },
+        {
+          "variables": "parameter values",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
+        }
+      ],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    },
+    {
+      "id": "rk8pd",
+      "name": "Embedded Runge-Kutta Prince-Dormand (8,9) method",
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000609"
+      },
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000293"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [],
+      "parameters": [],
+      "dependentDimensions": [{
+        "namespace": "SIO",
+        "id": "SIO_000418"
+      }],
+      "dependentVariableTargetPatterns": [{
+          "variables": "species concentrations",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+        },
+        {
+          "variables": "parameter values",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
+        }
+      ],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    },
+    {
+      "id": "rk4imp",
+      "name": "implicit 4th order Runge-Kutta at Gaussian points",
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000612"
+      },
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000293"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [],
+      "parameters": [],
+      "dependentDimensions": [{
+        "namespace": "SIO",
+        "id": "SIO_000418"
+      }],
+      "dependentVariableTargetPatterns": [{
+          "variables": "species concentrations",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+        },
+        {
+          "variables": "parameter values",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
+        }
+      ],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    },
+    {
+      "id": "gear",
+      "name": "backward differentiation formula",
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000288"
+      },
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000293"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [],
+      "parameters": [{
+        "kisaoId": {
+          "namespace": "KISAO",
+          "id": "KISAO_0000594"
+        },
+        "id": "order",
+        "name": "order",
+        "type": "integer",
+        "value": 1,
+        "recommendedRange": [1, 2],
+        "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+      }],
+      "dependentDimensions": [{
+        "namespace": "SIO",
+        "id": "SIO_000418"
+      }],
+      "dependentVariableTargetPatterns": [{
+          "variables": "species concentrations",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+        },
+        {
+          "variables": "parameter values",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
+        }
+      ],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    },
+    {
+      "id": "ssa",
+      "name": "Gillespie direct algorithm",
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000029"
+      },
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000295"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [],
+      "parameters": [{
+          "kisaoId": {
+            "namespace": "KISAO",
+            "id": "KISAO_0000488"
+          },
+          "id": "seed",
+          "name": "seed",
+          "type": "integer",
+          "value": 0,
+          "recommendedRange": null,
+          "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+        },
+        {
+          "kisaoId": {
+            "namespace": "KISAO",
+            "id": "KISAO_0000614"
+          },
+          "id": "sim",
+          "name": "Implementation",
+          "type": "string",
+          "value": "C",
+          "recommendedRange": ["C", "Java"],
+          "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+        }
+      ],
+      "dependentDimensions": [{
+        "namespace": "SIO",
+        "id": "SIO_000418"
+      }],
+      "dependentVariableTargetPatterns": [{
+          "variables": "species counts",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+        },
+        {
+          "variables": "parameter values",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
+        }
+      ],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    },
+    {
+      "id": "hssa",
+      "name": "Hierarchical stochastic simulation algorithm",
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000606"
+      },
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000295"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [{
+        "title": "Hierarchical stochastic simulation algorithm for SBML models of genetic circuits",
+        "authors": "Leandro H. Watanabe & Chris J. Myers",
+        "journal": "Frontiers in Bioengineering and Biotechnology",
+        "volume": 2,
+        "pages": "55",
+        "year": 2014,
+        "identifiers": [{
+          "namespace": "DOI",
+          "id": "10.3389/fbioe.2014.00055",
+          "url": "https://doi.org/10.3389/fbioe.2014.00055"
+        }]
+      }],
+      "parameters": [{
+        "kisaoId": {
+          "namespace": "KISAO",
+          "id": "KISAO_0000488"
+        },
+        "id": "seed",
+        "name": "seed",
+        "type": "integer",
+        "value": 0,
+        "recommendedRange": null,
+        "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+      }],
+      "dependentDimensions": [{
+        "namespace": "SIO",
+        "id": "SIO_000418"
+      }],
+      "dependentVariableTargetPatterns": [{
+          "variables": "species counts",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+        },
+        {
+          "variables": "parameter values",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
+        }
+      ],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    },
+    {
+      "id": "issa",
+      "name": "Incremental stochastic simulation algorithm",
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000611"
+      },
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000295"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [{
+        "title": "iSSA: An incremental stochastic simulation algorithm for genetic circuits",
+        "authors": "Chris Winstead, Curtis Madsen & Chris J. Myers",
+        "journal": "Proceedings of 2010 IEEE International Symposium on Circuits and Systems",
+        "pages": " 553-556",
+        "year": 2010,
+        "identifiers": [{
+          "namespace": "DOI",
+          "id": "10.1109/ISCAS.2010.5537539",
+          "url": "https://doi.org/10.1109/ISCAS.2010.5537539"
+        }]
+      }],
+      "parameters": [{
+        "kisaoId": {
+          "namespace": "KISAO",
+          "id": "KISAO_0000488"
+        },
+        "id": "seed",
+        "name": "seed",
+        "type": "integer",
+        "value": 0,
+        "recommendedRange": null,
+        "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+      }],
+      "dependentDimensions": [{
+        "namespace": "SIO",
+        "id": "SIO_000418"
+      }],
+      "dependentVariableTargetPatterns": [{
+          "variables": "species counts",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+        },
+        {
+          "variables": "parameter values",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
+        }
+      ],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    },
+    {
+      "id": "ssa-cr",
+      "name": "Composite-rejection stochastic simulation algorithm",
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000610"
+      },
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000295"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [{
+        "title": "A constant-time kinetic Monte Carlo algorithm for simulation of large biochemical reaction networks",
+        "authors": "A. Slepoy, A. P. Thompson & S. J. Plimpton",
+        "journal": "Journal of Chemical Physics",
+        "volume": 128,
+        "issue": 20,
+        "pages": "05B618",
+        "year": 2008,
+        "identifiers": [{
+          "namespace": "DOI",
+          "id": "doi/10.1063/1.2919546",
+          "url": "https://doi.org/doi/10.1063/1.2919546"
+        }]
+      }],
+      "parameters": [{
+        "kisaoId": {
+          "namespace": "KISAO",
+          "id": "KISAO_0000488"
+        },
+        "id": "seed",
+        "name": "seed",
+        "type": "integer",
+        "value": 0,
+        "recommendedRange": null,
+        "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+      }],
+      "dependentDimensions": [{
+        "namespace": "SIO",
+        "id": "SIO_000418"
+      }],
+      "dependentVariableTargetPatterns": [{
+          "variables": "species counts",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+        },
+        {
+          "variables": "parameter values",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
+        }
+      ],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    },
+    {
+      "id": "nmc",
+      "name": "Stochastic simulation algorithm with normally-distributed next reaction times",
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000613"
+      },
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000295"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [],
+      "parameters": [{
+        "kisaoId": {
+          "namespace": "KISAO",
+          "id": "KISAO_0000488"
+        },
+        "id": "seed",
+        "name": "seed",
+        "type": "integer",
+        "value": 0,
+        "recommendedRange": null,
+        "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"]
+      }],
+      "dependentDimensions": [{
+        "namespace": "SIO",
+        "id": "SIO_000418"
+      }],
+      "dependentVariableTargetPatterns": [{
+          "variables": "species counts",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+        },
+        {
+          "variables": "parameter values",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter/@value"
+        }
+      ],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    },
+    {
+      "id": "fba",
+      "name": "Flux balance analysis",
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000437"
+      },
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000624"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [],
+      "parameters": [],
+      "dependentDimensions": [],
+      "dependentVariableTargetPatterns": [{
+        "variables": "reaction fluxes",
+        "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfReactions/sbml:reaction/@flux"
+      }],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    },
+    {
+      "id": "hfba",
+      "name": "Hierarchical flux balance analysis",
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000608"
+      },
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000624"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [{
+        "title": "Hierarchical stochastic simulation algorithm for SBML models of genetic circuits",
+        "authors": "Leandro H. Watanabe & Chris J. Myers",
+        "journal": "Frontiers in Bioengineering and Biotechnology",
+        "volume": 2,
+        "pages": "55",
+        "year": 2014,
+        "identifiers": [{
+          "namespace": "DOI",
+          "id": "10.3389/fbioe.2014.00055",
+          "url": "https://doi.org/10.3389/fbioe.2014.00055"
+        }]
+      }],
+      "parameters": [],
+      "dependentDimensions": [],
+      "dependentVariableTargetPatterns": [{
+        "variables": "reaction fluxes",
+        "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfReactions/sbml:reaction/@flux"
+      }],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    },
+    {
+      "id": "dfba",
+      "name": "SOA-DFBA",
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000500"
+      },
+      "modelingFrameworks": [{
+        "namespace": "SBO",
+        "id": "SBO_0000624"
+      }],
+      "modelFormats": [{
+        "namespace": "EDAM",
+        "id": "format_2585",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "simulationFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3685",
+        "version": "L1V3",
+        "supportedFeatures": []
+      }],
+      "archiveFormats": [{
+        "namespace": "EDAM",
+        "id": "format_3686",
+        "version": null,
+        "supportedFeatures": []
+      }],
+      "citations": [{
+        "title": "Dynamic Flux Balance Analysis of Diauxic Growth in Escherichia coli",
+        "authors": "Radhakrishnan Mahadevan, Jeremy S. Edwards & Francis J. Doyle III",
+        "journal": "Biophysical Journal",
+        "volume": 83,
+        "issue": 3,
+        "pages": "1331-1340",
+        "year": 2002,
+        "identifiers": [{
+          "namespace": "DOI",
+          "id": "10.1016/S0006-3495(02)73903-9",
+          "url": "https://doi.org/10.1016/S0006-3495(02)73903-9"
+        }]
+      }],
+      "parameters": [],
+      "dependentDimensions": [],
+      "dependentVariableTargetPatterns": [{
+          "variables": "reaction fluxes",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfReactions/sbml:reaction/@flux"
+        },
+        {
+          "variables": "species concentrations",
+          "targetPattern": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species"
+        }
+      ],
+      "availableSoftwareInterfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
+      "dependencies": null
+    }
+  ],
   "interfaceTypes": ["desktop application", "command-line application", "BioSimulators Docker image"],
   "supportedOperatingSystemTypes": ["platform-independent"],
   "supportedProgrammingLanguages": [],
